@@ -1,0 +1,5 @@
+outs:
+- md5: 8e048c85bf7c6e396fffe7004a6f37d5
+  size: 939
+  hash: md5
+  path: README.roboflow.txt
