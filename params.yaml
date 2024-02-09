@@ -1,0 +1,20 @@
+base:
+  random_state: 42
+  device: "cuda" if torch.cuda.is_available() else "cpu"
+
+data:
+  # loading data config
+  train_dir: "data\\processed\\train"
+  val_dir: "data\\processed\\valid"
+  test_dir: "data\\processed\\test"
+
+train:
+# training/hyperparams
+  model: TinyVGG
+  epochs: 5
+  lr: 0.001
+  loss_fn: nn.CrossEntropyLoss()
+  
+
+reports:
+# metrics/plots etc.

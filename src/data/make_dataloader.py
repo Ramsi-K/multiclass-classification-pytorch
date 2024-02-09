@@ -2,9 +2,9 @@ from torchvision import datasets, transforms
 from torch.utils.data import DataLoader
 
 
-train_dir = "..\\..\\data\\processed\\train"
-val_dir = "..\\..\\data\\processed\\valid"
-test_dir = "..\\..\\data\\processed\\test"
+train_dir = config[data][train_dir]
+val_dir = config[data][val_dir]
+test_dir = config[data][test_dir]
 
 data_transform = transforms.Compose(
     [transforms.Resize(size=(64, 64)), transforms.ToTensor()]  # and normalize
@@ -39,8 +39,3 @@ print(
       val_dataloader: {val_dataloader}\
         test_dataloader: {test_dataloader}"
 )
-
-img, label = next(iter(train_dataloader))
-
-print(f"Image shape: {img.shape} -> [batch_size, color_channels, height, width]")
-print(f"Label shape: {label.shape}")
